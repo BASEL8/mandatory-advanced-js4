@@ -42,6 +42,7 @@ class App extends Component {
             game[row][col + 3].color === winnerColor
           ) {
             this.setState({ winner: this.state.player });
+            return;
           }
         }
         if (game[row + 3]) {
@@ -52,6 +53,7 @@ class App extends Component {
             game[row + 3][col].color === winnerColor
           ) {
             this.setState({ winner: this.state.player });
+            return;
           }
         }
         if (game[row + 3] && game[row][col + 3]) {
@@ -62,6 +64,7 @@ class App extends Component {
             game[row + 3][col + 3].color === winnerColor
           ) {
             this.setState({ winner: this.state.player });
+            return;
           }
         }
         if (game[row + 3] && game[row][col - 3]) {
@@ -72,6 +75,7 @@ class App extends Component {
             game[row + 3][col - 3].color === winnerColor
           ) {
             this.setState({ winner: this.state.player });
+            return;
           }
         }
       }
