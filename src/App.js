@@ -41,7 +41,7 @@ class App extends Component {
             game[row][col + 2].color === winnerColor &&
             game[row][col + 3].color === winnerColor
           ) {
-            this.setState({ winner: this.state.player });
+            this.setState({ winner: this.state.player, clicks: 0 });
             return;
           }
         }
@@ -52,7 +52,7 @@ class App extends Component {
             game[row + 2][col].color === winnerColor &&
             game[row + 3][col].color === winnerColor
           ) {
-            this.setState({ winner: this.state.player });
+            this.setState({ winner: this.state.player, clicks: 0 });
             return;
           }
         }
@@ -63,7 +63,7 @@ class App extends Component {
             game[row + 2][col + 2].color === winnerColor &&
             game[row + 3][col + 3].color === winnerColor
           ) {
-            this.setState({ winner: this.state.player });
+            this.setState({ winner: this.state.player, clicks: 0 });
             return;
           }
         }
@@ -74,7 +74,7 @@ class App extends Component {
             game[row + 2][col - 2].color === winnerColor &&
             game[row + 3][col - 3].color === winnerColor
           ) {
-            this.setState({ winner: this.state.player });
+            this.setState({ winner: this.state.player, clicks: 0 });
             return;
           }
         }
@@ -92,7 +92,8 @@ class App extends Component {
         [{}, {}, {}, {}, {}, {}, {}]
       ],
       player: this.state.player === "red" ? "yellow" : "red",
-      winner: null
+      winner: null,
+      clicks: 0
     });
   };
   render() {
