@@ -34,7 +34,7 @@ class App extends Component {
     const game = [...this.state.game];
     for (let row = 0; row < game.length; row++) {
       for (let col = 0; col < game[row].length; col++) {
-        if (game[row][col + 3]) {
+        if (game[row][col].color && game[row][col + 3]) {
           if (
             game[row][col].color === winnerColor &&
             game[row][col + 1].color === winnerColor &&
@@ -45,7 +45,7 @@ class App extends Component {
             return;
           }
         }
-        if (game[row + 3]) {
+        if (game[row][col].color && game[row + 3]) {
           if (
             game[row][col].color === winnerColor &&
             game[row + 1][col].color === winnerColor &&
@@ -56,7 +56,7 @@ class App extends Component {
             return;
           }
         }
-        if (game[row + 3] && game[row][col + 3]) {
+        if (game[row][col].color && game[row + 3] && game[row][col + 3]) {
           if (
             game[row][col].color === winnerColor &&
             game[row + 1][col + 1].color === winnerColor &&
@@ -67,7 +67,7 @@ class App extends Component {
             return;
           }
         }
-        if (game[row + 3] && game[row][col - 3]) {
+        if (game[row][col].color && game[row + 3] && game[row][col - 3]) {
           if (
             game[row][col].color === winnerColor &&
             game[row + 1][col - 1].color === winnerColor &&
